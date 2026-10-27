@@ -12,6 +12,10 @@ Quando o GitHub Pages estiver ativado para este repositório, o tutorial também
 
 A página inicial do site está disponível em [`index.html`](index.html) e contém um link direto para o tutorial.
 
+## Publicação automática
+
+O workflow [`pages.yml`](.github/workflows/pages.yml) publica automaticamente o conteúdo da branch `main` no GitHub Pages a cada `push`. Também é possível iniciar a publicação manualmente em **Actions → Publicar tutorial no GitHub Pages → Run workflow**.
+
 ## 1) Detect OS and Prerequisites
 
 Check your OS and whether required tools are available:
@@ -180,4 +184,3 @@ Expected result:
 3. Run script or notebook work.
 4. Format on save with Black.
 5. Run `pytest -q` before commit.
-
