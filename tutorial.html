@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Tutorial do Mini curso para criar e publicar um website didático no GitHub Pages com HTML ou Quarto.">
-  <title>Publicar um tutorial como website | Mini curso</title>
+  <title>Desenvolvimento de material didático para treinamento em ciência de dados aplicada à predição de atributos do solo por espectroscopia</title>
   <style>
     :root {
       --ink: #172033;
@@ -189,155 +189,25 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <p class="eyebrow">Mini curso · tutorial de publicação</p>
-      <h1>Como transformar seu material em um website</h1>
-      <p class="lead">Um guia prático para organizar aulas, notebooks e instruções em uma página acessível, versionada no GitHub e publicada com GitHub Pages.</p>
+      <p class="eyebrow">Material didático · ciência de dados aplicada</p>
+      <h1>Desenvolvimento de material didático para treinamento em ciência de dados aplicada à predição de atributos do solo por espectroscopia</h1>
+      <p class="lead">Conteúdos organizados para treinamento em Python, análise exploratória, processamento espectral, modelagem preditiva e metodologia científica.</p>
     </div>
   </header>
 
   <div class="layout">
-    <aside aria-label="Navegação do tutorial">
-      <p class="toc-title">Neste tutorial</p>
+    <aside aria-label="Navegação do material didático">
+      <p class="toc-title">Conteúdo</p>
       <nav>
-        <a href="#objetivo">Objetivo</a>
-        <a href="#escolha">Escolha a ferramenta</a>
-        <a href="#html">Opção A: HTML</a>
-        <a href="#quarto">Opção B: Quarto</a>
-        <a href="#github">Publicar no GitHub Pages</a>
-        <a href="#cursos">Conteúdos dos cursos</a>
-        <a href="#checklist">Checklist</a>
-        <a href="#referencias">Referências</a>
+        <a href="#cursos">Cursos e capítulos</a>
       </nav>
     </aside>
 
     <main>
-      <div class="intro-card" id="objetivo">
-        <h2>O que você vai produzir</h2>
-        <p>Ao final, você terá uma página de tutorial com títulos, navegação, explicações, exemplos de código e links. O arquivo pode ser aberto localmente no navegador e publicado sem servidor próprio.</p>
-        <span class="tag">iniciante</span>
-        <span class="tag">GitHub Pages</span>
-        <span class="tag">HTML</span>
-        <span class="tag">Quarto</span>
-      </div>
-
-      <section id="escolha">
-        <h2>1. Escolha o formato</h2>
-        <p>Use a opção que combina com o seu material. As duas opções podem ser versionadas no Git e publicadas no GitHub Pages.</p>
-        <div class="grid">
-          <div class="card">
-            <h3>HTML direto</h3>
-            <p>Ideal para uma página única, com controle total do visual e sem dependências de instalação.</p>
-          </div>
-          <div class="card">
-            <h3>Quarto</h3>
-            <p>Ideal para tutoriais com Markdown, Python, notebooks, gráficos e várias páginas conectadas.</p>
-          </div>
-        </div>
-        <div class="callout"><strong>Recomendação:</strong> comece com HTML se você quer publicar esta página rapidamente. Escolha Quarto quando o tutorial precisar executar código e gerar resultados automaticamente.</div>
-      </section>
-
-      <section id="html">
-        <h2>2. Opção A — criar uma página HTML</h2>
-        <ol class="steps">
-          <li>
-            <strong>Crie o arquivo.</strong> Na pasta do projeto, salve uma página com o nome <code>index.html</code>. O GitHub Pages procura esse arquivo como entrada principal.
-          </li>
-          <li>
-            <strong>Organize o conteúdo.</strong> Use um único <code>&lt;h1&gt;</code> para o título principal, <code>&lt;h2&gt;</code> para as aulas e links com âncoras para a navegação.
-          </li>
-          <li>
-            <strong>Teste localmente.</strong> Abra o arquivo no navegador. Confira menus, links, acentuação, tamanho da fonte e leitura no celular.
-          </li>
-        </ol>
-        <p>Uma estrutura mínima pode ser:</p>
-        <pre><button class="copy" type="button">Copiar</button><code>&lt;!doctype html&gt;
-&lt;html lang="pt-BR"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;title&gt;Meu tutorial&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Meu tutorial&lt;/h1&gt;
-  &lt;h2 id="aula-1"&gt;Aula 1&lt;/h2&gt;
-  &lt;p&gt;Explique aqui o objetivo da aula.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-        <p>Para reaproveitar este modelo no projeto, copie <a href="tutorial.html">esta própria página</a> e substitua os textos pelas aulas do curso.</p>
-      </section>
-
-      <section id="quarto">
-        <h2>3. Opção B — gerar o website com Quarto</h2>
-        <p>Quarto permite escrever em Markdown e gerar HTML. Também é uma boa opção para conectar explicações com células Python.</p>
-        <h3>Instalação e criação</h3>
-        <pre><button class="copy" type="button">Copiar</button><code># Verifique se o Quarto está instalado
-quarto check
-
-# Crie um projeto simples de website
-quarto create-project meu-tutorial --type website
-cd meu-tutorial
-
-# Gere os arquivos HTML
-quarto render</code></pre>
-        <h3>Organização sugerida</h3>
-        <pre><button class="copy" type="button">Copiar</button><code>meu-tutorial/
-├── _quarto.yml
-├── index.qmd
-├── aula-01.qmd
-├── aula-02.qmd
-└── imagens/</code></pre>
-        <p>No arquivo <code>_quarto.yml</code>, o menu lateral pode apontar para cada aula:</p>
-        <pre><button class="copy" type="button">Copiar</button><code>project:
-  type: website
-
-website:
-  title: "Meu tutorial"
-  sidebar:
-    contents:
-      - index.qmd
-      - aula-01.qmd
-      - aula-02.qmd
-
-format:
-  html:
-    theme: cosmo
-    toc: true</code></pre>
-        <div class="callout"><strong>Atenção:</strong> se houver células Python, renderize o projeto no mesmo ambiente em que as dependências estão instaladas. Assim os gráficos e resultados exibidos no website correspondem ao código.</div>
-      </section>
-
-      <section id="github">
-        <h2>4. Publicar com GitHub Pages</h2>
-        <ol class="steps">
-          <li>
-            <strong>Crie ou escolha um repositório.</strong> Use um repositório público para que o site possa ser acessado por qualquer pessoa. Um nome como <code>mini-curso</code> é fácil de compartilhar.
-          </li>
-          <li>
-            <strong>Envie os arquivos.</strong> Para HTML direto, coloque <code>index.html</code> na raiz. Para Quarto, envie o projeto e escolha a forma de publicação recomendada pelo Quarto.
-          </li>
-          <li>
-            <strong>Ative o Pages.</strong> No repositório, abra <em>Settings → Pages</em>. Em <em>Build and deployment</em>, selecione a fonte de publicação e salve.
-          </li>
-          <li>
-            <strong>Aguarde a implantação.</strong> O GitHub mostrará o endereço do site na mesma tela. A primeira publicação pode levar alguns minutos.
-          </li>
-        </ol>
-        <h3>Fluxo básico pelo terminal</h3>
-        <pre><button class="copy" type="button">Copiar</button><code>git init
-git add index.html
-git commit -m "Adiciona tutorial como website"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-git push -u origin main</code></pre>
-        <p>Depois de cada atualização:</p>
-        <pre><button class="copy" type="button">Copiar</button><code>git add .
-git commit -m "Atualiza conteúdo do tutorial"
-git push</code></pre>
-        <div class="callout"><strong>Não versionar:</strong> não coloque senhas, tokens, a pasta <code>.venv</code>, arquivos temporários ou dados pessoais no repositório.</div>
-      </section>
-
       <section id="cursos" class="course-library">
-        <h2>6. Conte?dos dos cursos</h2>
-        <p>Esta se??o re?ne o material dispon?vel na pasta <code>cursos/</code>. Abra cada item para ler o conte?do dentro do website ou use o link para acessar o arquivo original.</p>
-        <div class="callout"><strong>Como estudar:</strong> comece pelo curso para iniciantes, avance para a leitura explorat?ria e depois consulte os cursos de espectroscopia e metodologia. Os cap?tulos em notebook s?o vers?es pr?ticas para execu??o no VS Code ou Jupyter.</div>
+        <h2>Conteúdos dos cursos</h2>
+        <p>Esta seção reúne o material disponível na pasta <code>cursos/</code>. Abra cada item para ler o conteúdo dentro do website ou use o link para acessar o arquivo original.</p>
+        <div class="callout"><strong>Como estudar:</strong> comece pelo curso para iniciantes, avance para a leitura exploratória e depois consulte os cursos de espectroscopia e metodologia. Os capítulos em notebook são versões práticas para execução no VS Code ou Jupyter.</div>
 <details><summary>capitulo1.ipynb <a class="source-link" href="cursos/capitulo1.ipynb" target="_blank" rel="noopener">abrir arquivo original</a></summary><div class="course-content"><p>Leitura e análise exploratória/descritiva de dados espectrais de solo</p>
 <p><em>Capítulo do projeto de predição de atributos físicos e químicos do solo com espectroscopia Vis-NIR-SWIR (BSSL), em Python e Jupyter Notebook</em></p>
 <h2>1. Introdução</h2>
@@ -8806,43 +8676,7 @@ print(resultados)</code></pre>
 <li><strong>Repositório:</strong> pasta de projeto com o histórico controlado pelo Git.</li>
 <li><strong>Ambiente virtual:</strong> cópia isolada do Python e das bibliotecas de um projeto.</li>
 </ul></div></details>
-<details><summary>Tutorial.ipynb <span class="source-link">(arquivo vazio, pronto para receber conte?do)</span></summary><div class="course-content"><p>Este notebook ainda n?o possui c?lulas. Use-o para criar uma vers?o pr?tica do tutorial.</p></div></details>
-      </section>
-
-      <section id="checklist">
-        <h2>7. Checklist antes de compartilhar</h2>
-        <ul class="checklist">
-          <li>O objetivo do tutorial aparece logo no início?</li>
-          <li>As aulas ou etapas seguem uma ordem clara?</li>
-          <li>Todos os links e exemplos de código foram testados?</li>
-          <li>A página funciona em uma tela pequena?</li>
-          <li>O projeto tem um <code>README.md</code> com instruções para executar ou atualizar o site?</li>
-          <li>O repositório não contém senhas, chaves ou dados que não deveriam ser públicos?</li>
-          <li>O endereço publicado foi aberto em uma janela anônima para confirmar que está acessível?</li>
-        </ul>
-      </section>
-
-      <section id="referencias">
-        <h2>8. Referências oficiais</h2>
-        <table>
-          <thead>
-            <tr><th>Recurso</th><th>Quando consultar</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="https://docs.github.com/pt/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener">O que é o GitHub Pages</a></td>
-              <td>Para entender hospedagem, repositórios e endereços publicados.</td>
-            </tr>
-            <tr>
-              <td><a href="https://quarto.org/docs/publishing/github-pages.html" target="_blank" rel="noopener">Publicar Quarto no GitHub Pages</a></td>
-              <td>Para configurar renderização e implantação de projetos Quarto.</td>
-            </tr>
-            <tr>
-              <td><a href="https://docs.github.com/pt/pages" target="_blank" rel="noopener">Documentação do GitHub Pages</a></td>
-              <td>Para consultar configurações, domínios e solução de problemas.</td>
-            </tr>
-          </tbody>
-        </table>
+<details><summary>Tutorial.ipynb <span class="source-link">(arquivo vazio, pronto para receber conteúdo)</span></summary><div class="course-content"><p>Este notebook ainda não possui células. Use-o para criar uma versão prática do tutorial.</p></div></details>
       </section>
     </main>
   </div>

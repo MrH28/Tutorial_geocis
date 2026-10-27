@@ -1,8 +1,8 @@
-﻿# Pipeline: Install and Set Up VS Code + Python + Essential Extensions
+﻿# Desenvolvimento de material did?tico para treinamento em ci?ncia de dados aplicada ? predi??o de atributos do solo por espectroscopia
 
 This guide provides a reproducible setup pipeline for Windows, macOS, and Linux using command-based steps.
 
-## Tutorial em formato de website
+## Material did?tico em formato de website
 
 Abra o [tutorial completo em formato de website](tutorial.html), que reúne os conteúdos da pasta `cursos/`, incluindo os capítulos em notebook e os materiais em Markdown.
 
